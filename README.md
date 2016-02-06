@@ -1,8 +1,8 @@
-# get-started-with-ansible
+# try-ansible
 
-Getting started with Ansible.
+Vagrant script to try Ansible.
 
-This script uses Vagrant + Ansible Local Provisioner.
+This script uses Vagrant with Ansible Local Provisioner.
 
 So you don't need to install Ansible to your Vagrant host:)
 
@@ -14,13 +14,13 @@ Please install Virtual Box and Vagrant.
 
 https://www.virtualbox.org/wiki/Downloads
 
-I used Virtual Box 5.0.14 .
+I used Virtual Box 5.0.14
 
 ### Vagrant
 
 https://www.vagrantup.com/downloads.html
 
-Vagrant version should be > 1.8.1, because this script use "Ansible Local Provisioner"
+Vagrant version should be > 1.8.1, because this script use "Ansible Local Provisioner" which is introduced from 1.8
 
 ## Hello Ansible!
 
@@ -34,6 +34,7 @@ vagrant provision
 ```
 
 Then you will see
+
 ```
 PLAY ***************************************************************************
 
@@ -49,6 +50,6 @@ PLAY RECAP *********************************************************************
 default                    : ok=2    changed=0    unreachable=0    failed=0
 ```
 
-```
+## Ready for using Ansible!
 
-
+Now you can try to modify `playbook.yml`. Let's enjoy!
