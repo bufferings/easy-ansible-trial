@@ -25,15 +25,37 @@ Vagrant version should be > 1.8.1, because this script use "Ansible Local Provis
 ## Hello Ansible!
 
 ```
-# It takes long time for the first time to download Box image.
 vagrant up
+```
 
-# This is needed for the issue ( https://github.com/mitchellh/vagrant/issues/6793 )
-# I'm waiting for Vagrant 1.8.2 release.
+It takes long time for the first time to download Box and create VM.
+Then you will see following error message.
+
+```
+default: Installing Ansible...
+The Ansible software could not be found! Please verify
+that Ansible is correctly installed on your guest system.
+
+If you haven't installed Ansible yet, please install Ansible
+on your Vagrant basebox, or enable the automated setup with the
+`install` option of this provisioner. Please check
+https://docs.vagrantup.com/v2/provisioning/ansible_local.html
+for more information.
+```
+
+This is because of the issue ( https://github.com/mitchellh/vagrant/issues/6793 )
+which is caused by Vagrant 1.8.1 & Ansible 2.0. I'm looking forward to 1.8.2 release.
+
+There's a workaround introduced in the issue discussion.
+And this repository's Vagrantfile includes it.
+
+So please provision again.
+
+```
 vagrant provision
 ```
 
-Then you will see
+Then you will see Ansible working!
 
 ```
 PLAY ***************************************************************************
@@ -50,6 +72,4 @@ PLAY RECAP *********************************************************************
 default                    : ok=2    changed=0    unreachable=0    failed=0
 ```
 
-## Ready for using Ansible!
-
-Now you can try to modify `playbook.yml`. Let's enjoy!
+Now ready for trying Ansible. Let's enjoy!
